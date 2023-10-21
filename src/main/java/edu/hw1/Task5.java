@@ -1,17 +1,16 @@
 package edu.hw1;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Task5 {
+    private static final int TEN = 10;
+
     private Task5() {
     }
 
-    private static final int TEN = 10;
-
     public static boolean isPalindromeDescendant(int number) {
-        var digits = getDigits(number);
+        var digits = Utils.getDigits(number);
 
         if (digits.size() == 1) {
             return false;
@@ -58,19 +57,5 @@ public class Task5 {
         }
 
         return true;
-    }
-
-    private static List<Integer> getDigits(int numberInput) {
-        int number = numberInput;
-        List<Integer> result = new ArrayList<>();
-
-        while (number > 0) {
-            result.add(number % TEN);
-            number /= TEN;
-        }
-
-        Collections.reverse(result);
-
-        return result;
     }
 }
