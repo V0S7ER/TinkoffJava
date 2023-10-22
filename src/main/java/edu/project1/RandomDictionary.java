@@ -1,17 +1,14 @@
 package edu.project1;
 
+import java.util.Random;
 import org.jetbrains.annotations.NotNull;
 
-public class DefaultDictionary implements Dictionary {
-    private static final String[] words = {"hello", "easy", "project"};
-    private static int counter = 0;
+public class RandomDictionary implements Dictionary {
+    private static final String[] WORDS = {"hello", "easy", "project"};
+    private static final Random RANDOM = new Random();
 
     @Override
     public @NotNull String getWord() {
-        if (counter == words.length) {
-            counter = 0;
-        }
-
-        return words[counter++];
+        return WORDS[RANDOM.nextInt(WORDS.length)];
     }
 }
