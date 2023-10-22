@@ -10,6 +10,7 @@ public class Session {
     private int guessCount;
 
     public Session(String answer, int maxAttempts) {
+        assert answer != null && !answer.isEmpty();
         this.answer = answer;
         this.userAnswer = "*".repeat(answer.length()).toCharArray();
         this.maxAttempts = maxAttempts;
