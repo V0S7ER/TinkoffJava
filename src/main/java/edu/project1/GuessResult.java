@@ -3,12 +3,16 @@ package edu.project1;
 import org.jetbrains.annotations.NotNull;
 
 public sealed interface GuessResult {
+    @SuppressWarnings("unused")
     char[] state();
 
+    @SuppressWarnings("unused")
     int attempt();
 
+    @SuppressWarnings("unused")
     int maxAttempts();
 
+    @SuppressWarnings("unused")
     @NotNull String getMessage();
 
     record Defeat(char[] state, int attempt, int maxAttempts) implements GuessResult {

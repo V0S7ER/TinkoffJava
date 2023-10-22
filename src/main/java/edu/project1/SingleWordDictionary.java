@@ -2,13 +2,8 @@ package edu.project1;
 
 import org.jetbrains.annotations.NotNull;
 
-public class SingleWordDictionary implements Dictionary {
-
-    private final String word;
-
-    public SingleWordDictionary(String word) {
-        this.word = word;
-    }
+@SuppressWarnings("unused")
+public record SingleWordDictionary(String word) implements Dictionary {
 
     @Override
     public @NotNull String getWord() {
