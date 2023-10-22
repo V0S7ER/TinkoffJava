@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 public class Task3 {
     private static final Logger LOGGER = LogManager.getLogger();
     private static final String SUCCESS_MESSAGE = "Success!";
+    private static final double DEFAULT_PROBABILITY = 0.1;
 
     public interface Connection extends AutoCloseable {
         void execute(String command);
@@ -23,12 +24,12 @@ public class Task3 {
         }
     }
 
-    public final class FaultyConnection implements Connection {
-        private static final double FAULT_PROBABILITY = 0.1;
+    public static final class FaultyConnection implements Connection {
+        private static double faultProbability = DEFAULT_PROBABILITY;
         private static final Random RANDOM = new Random();
 
         @Override public void execute(String command) {
-            if (RANDOM.nextDouble() < FAULT_PROBABILITY) {
+            if (RANDOM.nextDouble() < faultProbability) {
                 throw new ConnectionException();
             }
 
@@ -38,13 +39,17 @@ public class Task3 {
         @Override public void close() {
             // close
         }
+
+        public static void setFaultProbability(double probability) {
+            faultProbability = probability;
+        }
     }
 
     public interface ConnectionManager {
         Connection getConnection();
     }
 
-    public final class DefaultConnectionManager implements ConnectionManager {
+    public static final class DefaultConnectionManager implements ConnectionManager {
         private static final double FAULT_PROBABILITY = 0.1;
         private static final Random RANDOM = new Random();
 
@@ -53,7 +58,7 @@ public class Task3 {
         }
     }
 
-    public final class FaultyConnectionManager implements ConnectionManager {
+    public static final class FaultyConnectionManager implements ConnectionManager {
 
         @Override public Connection getConnection() {
             return new FaultyConnection();

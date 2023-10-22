@@ -1,5 +1,7 @@
 package edu.hw2;
 
+//import org.apache.logging.log4j.LogManager;
+
 public class Task4 {
     private Task4() {
     }
@@ -10,5 +12,11 @@ public class Task4 {
         return new CallingInfo(traceElement.getClassName(), traceElement.getMethodName());
     }
 
-    public record CallingInfo(String className, String methodName) {}
+//    public static void main(String[] args) {
+//        CallingInfo info = callingInfo();
+//        LogManager.getLogger().info(String.format("\nClass: %s\nMethod: %s", info.className(), info.methodName()));
+//    }
+
+    public record CallingInfo(String className, String methodName) {
+    }
 }
