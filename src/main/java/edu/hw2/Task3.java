@@ -15,11 +15,13 @@ public class Task3 {
 
     public static final class StableConnection implements Connection {
 
-        @Override public void execute(String command) {
+        @Override
+        public void execute(String command) {
             LOGGER.info(SUCCESS_MESSAGE);
         }
 
-        @Override public void close() {
+        @Override
+        public void close() {
             // to do some hard things
         }
     }
@@ -36,7 +38,8 @@ public class Task3 {
             LOGGER.info(SUCCESS_MESSAGE);
         }
 
-        @Override public void close() {
+        @Override
+        public void close() {
             // close
         }
 
@@ -53,14 +56,16 @@ public class Task3 {
         private static final double FAULT_PROBABILITY = 0.1;
         private static final Random RANDOM = new Random();
 
-        @Override public Connection getConnection() {
+        @Override
+        public Connection getConnection() {
             return RANDOM.nextDouble() < FAULT_PROBABILITY ? new FaultyConnection() : new StableConnection();
         }
     }
 
     public static final class FaultyConnectionManager implements ConnectionManager {
 
-        @Override public Connection getConnection() {
+        @Override
+        public Connection getConnection() {
             return new FaultyConnection();
         }
     }
@@ -87,8 +92,7 @@ public class Task3 {
         void tryExecute(String command) throws Exception {
             ConnectionException cause = null;
             for (int iteration = 0; iteration < maxAttempts; ++iteration) {
-                try (
-                    Connection connection = manager.getConnection()) { // try-with-resources - connection само закроется
+                try (Connection connection = manager.getConnection()) {
                     connection.execute(command);
                     return; // если выполнилось - оно завершится тут
                 } catch (ConnectionException e) {

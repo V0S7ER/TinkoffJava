@@ -12,11 +12,6 @@ public class Task4 {
         return new CallingInfo(traceElement.getClassName(), traceElement.getMethodName());
     }
 
-//    public static void main(String[] args) {
-//        CallingInfo info = callingInfo();
-//        LogManager.getLogger().info(String.format("\nClass: %s\nMethod: %s", info.className(), info.methodName()));
-//    }
-
     public record CallingInfo(String className, String methodName) {
     }
 }

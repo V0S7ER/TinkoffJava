@@ -29,15 +29,18 @@ public class Task2 {
             super(side, side);
         }
 
-        @Override public Square setHeight(int side) {
+        @Override
+        public Square setHeight(int side) {
             return new Square(side);
         }
 
-        @Override public Square setWidth(int side) {
+        @Override
+        public Square setWidth(int side) {
             return new Square(side);
         }
 
-        @Override public int area() {
+        @Override
+        public int area() {
             return super.area();
         }
     }
