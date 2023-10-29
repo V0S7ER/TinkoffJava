@@ -1,5 +1,6 @@
 package edu.hw3.Task8;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
@@ -8,8 +9,12 @@ public class BackwardIterator<T> implements Iterator<T> {
 
     private final List<T> elements;
 
-    BackwardIterator(List<T> elements) {
-        this.elements = elements;
+    public BackwardIterator(List<T> elements) {
+        if (elements == null) {
+            this.elements = new ArrayList<>();
+        } else {
+            this.elements = new ArrayList<>(elements);
+        }
     }
 
     @Override
@@ -19,6 +24,10 @@ public class BackwardIterator<T> implements Iterator<T> {
 
     @Override
     public T next() {
+        if (!hasNext()) {
+            return null;
+        }
+
         return elements.removeLast();
     }
 

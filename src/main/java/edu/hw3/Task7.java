@@ -1,7 +1,6 @@
 package edu.hw3;
 
 import java.util.Comparator;
-import java.util.function.ToIntFunction;
 
 public class Task7 {
     private Task7() {

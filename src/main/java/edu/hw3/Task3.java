@@ -8,7 +8,7 @@ public class Task3 {
     private Task3() {
     }
 
-    public static Map<Object, Integer> freqDict(List<?> list) {
+    public static Map<?, Integer> freqDict(List<?> list) {
         Map<Object, Integer> result = new HashMap<>();
 
         if (list == null) {

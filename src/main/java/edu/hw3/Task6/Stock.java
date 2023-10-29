@@ -1,7 +1,6 @@
 package edu.hw3.Task6;
 
 import org.jetbrains.annotations.NotNull;
-import java.util.Comparator;
 
 public record Stock(int value, String name) implements Comparable<Stock> {
     @Override

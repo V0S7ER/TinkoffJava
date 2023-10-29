@@ -15,9 +15,10 @@ public class Task5 {
 
         var names = new ArrayList<>(inputData);
 
+        final String SPLIT_REGEX = "\\s+";
         Comparator<String> naturalOrderComparator = (o1, o2) -> {
-            String[] data1 = o1.split("\\s+");
-            String[] data2 = o2.split("\\s+");
+            String[] data1 = o1.split(SPLIT_REGEX);
+            String[] data2 = o2.split(SPLIT_REGEX);
             if (data1.length > 2 || data2.length > 2 || data1.length == 0 || data2.length == 0) {
                 throw new IllegalArgumentException("Illegal name!");
             }
