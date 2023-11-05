@@ -1,9 +1,9 @@
 package edu.hw3;
 
-import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import org.jetbrains.annotations.NotNull;
 
 public class Task5 {
     private Task5() {

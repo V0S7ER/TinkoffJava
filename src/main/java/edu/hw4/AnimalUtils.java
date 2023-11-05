@@ -9,6 +9,10 @@ import java.util.Optional;
 
 @SuppressWarnings("unused")
 public class AnimalUtils {
+
+    private AnimalUtils() {
+    }
+
     private static final int MAX_SAFETY_HEIGHT = 100;
 
     public static List<Animal> getSortedList(List<Animal> animals) {
