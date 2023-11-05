@@ -13,7 +13,7 @@ public class Task1Test {
         String input = "Hello world!";
         String expected = "Svool dliow!";
 
-        assertThat(Task1.atbash(input)).isEqualTo(expected);
+        assertThat(Task1.encryptViaAtbash(input)).isEqualTo(expected);
     }
 
     @Test
@@ -24,13 +24,13 @@ public class Task1Test {
         String expected =
             "Zmb ullo xzm dirgv xlwv gszg z xlnkfgvi xzm fmwvihgzmw. Tllw kiltiznnvih dirgv xlwv gszg sfnzmh xzm fmwvihgzmw. ― Nzigrm Uldovi";
 
-        assertThat(Task1.atbash(input)).isEqualTo(expected);
+        assertThat(Task1.encryptViaAtbash(input)).isEqualTo(expected);
     }
 
     @ParameterizedTest
     @NullAndEmptySource()
     public void testNullAndEmpty(String s) {
-        String result = Task1.atbash(s);
+        String result = Task1.encryptViaAtbash(s);
         assertThat(result == null || s.equals(result)).isTrue();
     }
 }

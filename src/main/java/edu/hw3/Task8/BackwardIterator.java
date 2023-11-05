@@ -3,6 +3,7 @@ package edu.hw3.Task8;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.function.Consumer;
 
 public class BackwardIterator<T> implements Iterator<T> {
@@ -25,7 +26,7 @@ public class BackwardIterator<T> implements Iterator<T> {
     @Override
     public T next() {
         if (!hasNext()) {
-            return null;
+            throw new NoSuchElementException();
         }
 
         return elements.removeLast();

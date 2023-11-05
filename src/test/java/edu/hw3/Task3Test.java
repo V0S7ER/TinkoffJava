@@ -13,8 +13,8 @@ public class Task3Test {
     @Test
     @DisplayName("[\"a\", \"bb\", \"a\", \"bb\"]")
     public void test1() {
-        List<?> input = List.of("a", "bb", "a", "bb");
-        Map exp = new HashMap<>();
+        List<String> input = List.of("a", "bb", "a", "bb");
+        Map<String, Integer> exp = new HashMap<>();
 
         exp.put("a", 2);
         exp.put("bb", 2);
@@ -26,7 +26,7 @@ public class Task3Test {
     @DisplayName("[\"this\", \"and\", \"that\", \"and\"]")
     public void test2() {
         List<?> input = List.of("this", "and", "that", "and");
-        Map exp = new HashMap<>();
+        Map<String, Integer> exp = new HashMap<>();
 
         exp.put("that", 1);
         exp.put("and", 2);
@@ -38,8 +38,8 @@ public class Task3Test {
     @Test
     @DisplayName("[\"код\", \"код\", \"код\", \"bug\"]")
     public void test3() {
-        List<?> input = List.of("код", "код", "код", "bug");
-        Map exp = new HashMap<>();
+        List<String> input = List.of("код", "код", "код", "bug");
+        Map<String, Integer> exp = new HashMap<>();
 
         exp.put("код", 3);
         exp.put("bug", 1);
@@ -50,8 +50,8 @@ public class Task3Test {
     @Test
     @DisplayName("[1, 1, 2, 2]")
     public void test4() {
-        List<?> input = List.of(1, 1, 2, 2);
-        Map exp = new HashMap<>();
+        List<Integer> input = List.of(1, 1, 2, 2);
+        Map<Integer, Integer> exp = new HashMap<>();
 
         exp.put(1, 2);
         exp.put(2, 2);
